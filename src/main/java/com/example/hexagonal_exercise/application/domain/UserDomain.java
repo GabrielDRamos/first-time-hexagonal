@@ -19,9 +19,9 @@ public class UserDomain {
     private String email;
     private String password;
 
-    public String create(UserOutputPort userOutputPort) {
-        userOutputPort.create(this);
-        return  "User created";
+    public UserDomain create(UserOutputPort userOutputPort) {
+
+        return   userOutputPort.create(this);
     }
 
     public String delete(UserOutputPort userOutputPort){
@@ -42,4 +42,6 @@ public class UserDomain {
                 .build();
 
     }
+
+
 }

@@ -11,7 +11,7 @@ import lombok.AllArgsConstructor;
 public class UserDomainUseCase implements UserInputPort {
     private final UserOutputPort userOutputPort;
     @Override
-    public String execute(UserDomain userDomain){
+    public UserDomain execute(UserDomain userDomain){
         return userDomain.create(userOutputPort);
     }
     @Override

@@ -1,6 +1,7 @@
 package com.example.hexagonal_exercise.adapters.input;
 
 import com.example.hexagonal_exercise.adapters.input.request.UserRequest;
+import com.example.hexagonal_exercise.application.domain.UserDomain;
 import com.example.hexagonal_exercise.application.ports.in.UserInputPort;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     private final UserInputPort userInputPort;
     @PostMapping
-    public String create(@RequestBody UserRequest request) {
+    public UserDomain create(@RequestBody UserRequest request) {
         return  userInputPort.execute(request.toUserDomain(request));
     }
 
